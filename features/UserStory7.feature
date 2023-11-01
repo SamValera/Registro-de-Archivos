@@ -1,27 +1,27 @@
-User Story 2
-Feature: Registro de una nueva cuenta como persona que cultiva en su hogar
+User Story 7
+Feature: Ingresar a la comunidad como persona que cultiva en su hogar
 
   Como persona que cultiva en casa,
-  Quiero poder registrarme para acceder a las funciones y recursos de la aplicación.
+  Quiero poder ingresar a la comunidad para ayudar y pedir consejos de otros usuarios.
 
   Background:
-    Given la persona que cultiva en su hogar se encuentra en la aplicación
+    Given la persona que cultiva en su hogar ingresa a la comunidad
 
-  Scenario: Ingresar datos en el registro
-    When la persona que cultiva en su hogar presione el botón "Registrarse como persona que cultiva en su hogar"
-    Then la aplicación mostrará una pantalla solicitando el ingreso de los datos de la persona que cultiva en su hogar como nombre, correo electrónico y contraseña
+  Scenario: Ingresar a la comunidad
+    When la persona que cultiva en su hogar presione el botón "Comunidad"
+    Then la aplicación mostrará la pantalla "Comunidad"
 
     Examples:
-      | persona_que_cultiva | 
+      | persona_que_cultiva |
       | Juan                |
       | María               |
 
-  Scenario: Crear nueva cuenta
-    Given la persona que cultiva en su hogar ha llenado sus datos en la pantalla de registro
-    When la persona que cultiva en su hogar presione el botón "Registrarse"
-    Then la aplicación registrará la nueva cuenta
+  Scenario: Registrar un post
+    Given la persona que cultiva en su hogar esta en la página de "Comunidad"
+    When la persona que cultiva en su hogar podrá registrar un post y presionar el boton "Publicar"
+    Then la aplicación registrará un nuevo post
 
     Examples:
-      | persona_que_cultiva | correo electrónico        | contraseña |
-      | Juan                | juan@example.com          | secreto123 |
-      | María               | maria@cultivador.com      | password123 |
+      | persona_que_cultiva | Texto                                                                      | Post/Comentario  |
+      | Juan                | Hola, quisiera recomendaciones para sembrar "hierba luisa"                 | post             |
+      | María               | Hola Juan, puedes seguir estas indicaciones para que siembres hierba luisa | comentario       |
