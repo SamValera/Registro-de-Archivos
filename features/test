@@ -1,1 +1,24 @@
-Teste
+User Story 2
+Feature: Recordatorios de riego para plantas en la aplicación
+
+  Como una entusiasta persona que cultiva en casa,
+  Deseo recibir recordatorios de riego para asegurarme de que mis preciadas plantas reciban la cantidad adecuada de agua
+  y puedan prosperar de manera óptima.
+
+  Scenario: Configurar un recordatorio de riego para una planta
+    When el usuario selecciona una planta específica para gestionar sus cuidados
+    Then el sistema muestra un mensaje de confirmación
+    And el sistema agrega el recordatorio de riego a la lista de tareas
+
+    Examples:
+      | usuario | mensaje de confirmación y agrega el recordatorio a la lista de tareas |
+      | Juan    | Recordatorio de riego configurado para planta de interior         |
+
+  Scenario: Recibir un recordatorio de riego para una planta
+    Given el usuario ha configurado un recordatorio de riego para una planta específica
+    When llega el momento programado para el riego de la planta
+    Then el sistema muestra una notificación emergente con el mensaje del recordatorio
+
+    Examples:
+      | mensaje del recordatorio                                        |
+      | "Hoy es el día de riego para tu planta de interior. Riega ahora." |
