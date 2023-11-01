@@ -1,15 +1,16 @@
-User Story 2
-Feature: Registro de una nueva cuenta como persona que cultiva en su hogar
+User Story 4
+Feature: Registrar planta en el jardín virtual 
 
-  Como persona que cultiva en casa,
-  Quiero poder registrarme para acceder a las funciones y recursos de la aplicación.
+  Como persona que cultiva en su hogar,
+  deseo poder registrar mis plantas en el jardín virtual para tener una mejor organización de mis plantas
 
   Background:
-    Given la persona que cultiva en su hogar se encuentra en la aplicación
+    Given la persona que cultiva en su hogar se encuentra en su perfil
 
-  Scenario: Ingresar datos en el registro
-    When la persona que cultiva en su hogar presione el botón "Registrarse como persona que cultiva en su hogar"
-    Then la aplicación mostrará una pantalla solicitando el ingreso de los datos de la persona que cultiva en su hogar como nombre, correo electrónico y contraseña
+  Scenario: Ingresar al jardín virtual
+    When la persona que cultiva en su hogar presione el botón “Jardín virtual”
+    Then la aplicación permitirá el acceso al jardín virtual
+    
 
     Examples:
       | persona_que_cultiva | 
