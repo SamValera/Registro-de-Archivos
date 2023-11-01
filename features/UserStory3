@@ -10,7 +10,7 @@ Examples:
    Examples:
 
       | persona_que_cultiva | 
-      | Pedro                |
+      | Pedro               |
       | Carla               |
 
 Feature: Iniciar sesión en la aplicación
@@ -19,7 +19,6 @@ Feature: Iniciar sesión en la aplicación
     Given que el agricultor se encuentra en la pantalla de inicio de sesión
     When el agricultor ingrese credenciales válidas (nombre de usuario y contraseña) y presione el botón “Iniciar sesión”
     Then la aplicación permitirá que el agricultor pueda acceder a su cuenta
-
 
 Feature: Iniciar sesión en la aplicación
 
