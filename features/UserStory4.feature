@@ -17,12 +17,25 @@ Feature: Registrar planta en el jardín virtual
       | Juan                |
       | María               |
 
-  Scenario: Crear nueva cuenta
-    Given la persona que cultiva en su hogar ha llenado sus datos en la pantalla de registro
-    When la persona que cultiva en su hogar presione el botón "Registrarse"
-    Then la aplicación registrará la nueva cuenta
+
+  Scenario: Ingresar una planta
+    Given la persona que cultiva en su hogar se encuentra en el jardín virtual
+    When  la persona que cultiva en su hogar presione el botón “Ingresar nueva planta"
+    Then la aplicación mostrar una pantalla solicitando la información de planta que se desea registrar
+    
+    Examples:
+      | persona_que_cultiva | correo electrónico        | contraseña |
+      | Juan                | juan@example.com          | secreto123 |
+      | María               | maria@cultivador.com      | password123 |
+
+      
+  Scenario: Registrar una planta
+    Given la persona que cultiva en su hogar ha llenado la información solicitado sobre la planta a registrar
+    When la persona que cultiva en su hogar presione el botón “Registrar planta”
+    Then la aplicación registrará la planta en el jardín virtual de la persona que cultiva en su hogar
 
     Examples:
       | persona_que_cultiva | correo electrónico        | contraseña |
       | Juan                | juan@example.com          | secreto123 |
       | María               | maria@cultivador.com      | password123 |
+
