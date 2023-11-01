@@ -1,24 +1,27 @@
 User Story 2
-Feature: Recordatorios de riego para plantas en la aplicación
+Feature: Registro de una nueva cuenta como persona que cultiva en su hogar
 
-  Como una entusiasta persona que cultiva en casa,
-  Deseo recibir recordatorios de riego para asegurarme de que mis preciadas plantas reciban la cantidad adecuada de agua
-  y puedan prosperar de manera óptima.
+  Como persona que cultiva en casa,
+  Quiero poder registrarme para acceder a las funciones y recursos de la aplicación.
 
-  Scenario: Configurar un recordatorio de riego para una planta
-    When el usuario selecciona una planta específica para gestionar sus cuidados
-    Then el sistema muestra un mensaje de confirmación
-    And el sistema agrega el recordatorio de riego a la lista de tareas
+  Background:
+    Given la persona que cultiva en su hogar se encuentra en la aplicación
 
-    Examples:
-      | usuario | mensaje de confirmación y agrega el recordatorio a la lista de tareas |
-      | Juan    | Recordatorio de riego configurado para planta de interior         |
-
-  Scenario: Recibir un recordatorio de riego para una planta
-    Given el usuario ha configurado un recordatorio de riego para una planta específica
-    When llega el momento programado para el riego de la planta
-    Then el sistema muestra una notificación emergente con el mensaje del recordatorio
+  Scenario: Ingresar datos en el registro
+    When la persona que cultiva en su hogar presione el botón "Registrarse como persona que cultiva en su hogar"
+    Then la aplicación mostrará una pantalla solicitando el ingreso de los datos de la persona que cultiva en su hogar como nombre, correo electrónico y contraseña
 
     Examples:
-      | mensaje del recordatorio                                        |
-      | "Hoy es el día de riego para tu planta de interior. Riega ahora." |
+      | persona_que_cultiva | 
+      | Juan                |
+      | María               |
+
+  Scenario: Crear nueva cuenta
+    Given la persona que cultiva en su hogar ha llenado sus datos en la pantalla de registro
+    When la persona que cultiva en su hogar presione el botón "Registrarse"
+    Then la aplicación registrará la nueva cuenta
+
+    Examples:
+      | persona_que_cultiva | correo electrónico        | contraseña |
+      | Juan                | juan@example.com          | secreto123 |
+      | María               | maria@cultivador.com      | password123 |
